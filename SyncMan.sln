@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.6.33723.286
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SyncMan", "SyncMan.csproj", "{D19B39DB-E5FA-4410-A44A-3AC26A5334E7}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Test", "Test\Test.csproj", "{5DC3A13A-57A4-490B-9B8D-C26C73145D12}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{D19B39DB-E5FA-4410-A44A-3AC26A5334E7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D19B39DB-E5FA-4410-A44A-3AC26A5334E7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D19B39DB-E5FA-4410-A44A-3AC26A5334E7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D19B39DB-E5FA-4410-A44A-3AC26A5334E7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5DC3A13A-57A4-490B-9B8D-C26C73145D12}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5DC3A13A-57A4-490B-9B8D-C26C73145D12}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5DC3A13A-57A4-490B-9B8D-C26C73145D12}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5DC3A13A-57A4-490B-9B8D-C26C73145D12}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {7B277A38-F3F1-4576-98AC-DEA43BE37665}
+	EndGlobalSection
+EndGlobal
