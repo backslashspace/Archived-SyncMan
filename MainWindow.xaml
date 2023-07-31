@@ -171,7 +171,7 @@
 
         <Image Source="/shell32_16801.ico" Margin="9,-23,0,0" Height="14" RenderOptions.BitmapScalingMode="HighQuality"  VerticalAlignment="Top" HorizontalAlignment="Left" Width="14"/>
 
-        <TextBlock Text="Sync Manager v1.0.0.0" Focusable="False" Foreground="#ffffff" Margin="30,-25,0,0" HorizontalAlignment="Left" Width="178" Height="17" VerticalAlignment="Top"/>
+        <TextBlock Text="Sync Manager v1.0.0.1" Focusable="False" Foreground="#ffffff" Margin="30,-25,0,0" HorizontalAlignment="Left" Width="178" Height="17" VerticalAlignment="Top"/>
 
         <!-- define window buttons -->
         <!-- dactiv foregound = 777777 -->

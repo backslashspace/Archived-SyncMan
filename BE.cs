@@ -175,7 +175,14 @@ namespace SyncMan
                             LogBoxAdd("\n\n[Important] Unfinished upload from " + Dev, Brushes.OrangeRed, FontWeights.Normal);
                             LogBoxAdd("\nStart time: " + LastDevice.LastAccess, Brushes.OrangeRed, FontWeights.Normal);
 
-                            ContinuePrompt("Unfinished or aborted upload from " + Dev + ".\nContinue?", "Ätänschen", MessageBoxIcon.Warning);
+                            if (!ContinuePrompt("Unfinished or aborted upload from " + Dev + ".\nContinue?", "Ätänschen", MessageBoxIcon.Warning))
+                            {
+                                //update db
+
+                                await Task.Run(() => SaveXMLFile("success"));
+
+                                Environment.Exit(1);
+                            }
 
                             LogBoxAdd("\n\nContinuing", Brushes.NavajoWhite, FontWeights.Normal);
                         }
@@ -184,7 +191,14 @@ namespace SyncMan
                             //will upload but other is downloading
                             LogBoxAdd("\n[Info] " + Dev + " is currently downloading", Brushes.Yellow, FontWeights.Normal);
 
-                            ContinuePrompt("[Important] " + Dev + " is currently downloading.\nContinue?", "Ätänschen", MessageBoxIcon.Warning);
+                            if (!ContinuePrompt("[Important] " + Dev + " is currently downloading.\nContinue?", "Ätänschen", MessageBoxIcon.Warning))
+                            {
+                                //update db
+
+                                await Task.Run(() => SaveXMLFile("success"));
+
+                                Environment.Exit(1);
+                            }
 
                             LogBoxAdd("\nContinuing", Brushes.NavajoWhite, FontWeights.Normal);
                         }
@@ -196,7 +210,14 @@ namespace SyncMan
                             //will download but other is uploading
                             LogBoxAdd("\n[Warning] " + Dev + " is currently uploading", Brushes.Yellow, FontWeights.Normal);
 
-                            ContinuePrompt("[Important] " + Dev + " is currently uploading.\nContinue?", "Ätänschen", MessageBoxIcon.Warning);
+                            if (!ContinuePrompt("[Important] " + Dev + " is currently uploading.\nContinue?", "Ätänschen", MessageBoxIcon.Warning))
+                            {
+                                //update db
+
+                                await Task.Run(() => SaveXMLFile("success"));
+
+                                Environment.Exit(1);
+                            }
 
                             LogBoxAdd("\nContinuing", Brushes.NavajoWhite, FontWeights.Normal);
                         }
@@ -482,7 +503,7 @@ namespace SyncMan
                 }
             }
 
-            void ContinuePrompt(String Message, String Title, MessageBoxIcon Icon)
+            Boolean ContinuePrompt(String Message, String Title, MessageBoxIcon Icon)
             {
                 DialogResult R = System.Windows.Forms.MessageBox.Show(
                         Message,
@@ -492,7 +513,7 @@ namespace SyncMan
 
                 if (R == System.Windows.Forms.DialogResult.Yes)
                 {
-                    return;
+                    return true;
                 }
 
                 LogBoxAdd("\n\nExiting", Brushes.Yellow, FontWeights.Normal);
@@ -502,7 +523,7 @@ namespace SyncMan
                     LogBoxAdd(".", Brushes.LightGray, FontWeights.Normal);
                 }
 
-                System.Environment.Exit(1);
+                return false;
             }
 
             void ReadXML()
@@ -678,7 +699,7 @@ namespace SyncMan
                         MessageBoxButtons.OK,
                         MessageBoxIcon.Error);
 
-                    throw new Exception("AHHHHHHHHHH");
+                    throw new Exception("AHHHHHHHHHH (L~700)");
                 }
             }
             catch (System.ArgumentException)
