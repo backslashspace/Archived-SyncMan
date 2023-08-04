@@ -1,5 +1,4 @@
-﻿using NetTools;
-using Microsoft.Win32;
+﻿using Microsoft.Win32;
 using System;
 using System.Diagnostics;
 using System.Threading;
@@ -10,6 +9,9 @@ using System.Windows.Threading;
 using System.Windows;
 using System.IO;
 using System.Xml;
+//libs
+using ProgramLauncher;
+using RegistryTools;
 
 namespace SyncMan
 {
