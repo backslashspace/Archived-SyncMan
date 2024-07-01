@@ -1,2 +1,1 @@
-# SyncMan
- Description to be made
+new version: https://github.com/backslashspace/Sync-Manager
